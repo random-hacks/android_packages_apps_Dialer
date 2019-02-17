@@ -24,7 +24,7 @@ import android.content.pm.PackageManager;
 import android.mokee.utils.MoKeeUtils;
 import android.provider.Settings;
 
-import mokee.providers.MKSettings;
+import lineageos.providers.LineageSettings;
 
 import java.util.List;
 

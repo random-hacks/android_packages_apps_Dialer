@@ -25,7 +25,7 @@ import android.preference.SwitchPreference;
 
 import com.android.dialer.R;
 
-import mokee.providers.MKSettings;
+import lineageos.providers.LineageSettings;
 
 import java.util.Arrays;
 

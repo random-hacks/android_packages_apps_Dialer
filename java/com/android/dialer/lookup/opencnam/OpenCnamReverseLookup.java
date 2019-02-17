@@ -27,7 +27,7 @@ import com.android.dialer.lookup.ContactBuilder;
 import com.android.dialer.lookup.LookupUtils;
 import com.android.dialer.lookup.ReverseLookup;
 
-import mokee.providers.MKSettings;
+import lineageos.providers.LineageSettings;
 
 import java.io.IOException;
 
