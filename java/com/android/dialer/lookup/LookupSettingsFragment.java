@@ -82,22 +82,22 @@ public class LookupSettingsFragment extends PreferenceFragment
         final ContentResolver cr = getActivity().getContentResolver();
 
         if (preference == mEnableForwardLookup) {
-            MKSettings.System.putInt(cr, MKSettings.System.ENABLE_FORWARD_LOOKUP,
+            LineageSettings.System.putInt(cr, LineageSettings.System.ENABLE_FORWARD_LOOKUP,
                     ((Boolean) newValue) ? 1 : 0);
         } else if (preference == mEnablePeopleLookup) {
-            MKSettings.System.putInt(cr, MKSettings.System.ENABLE_PEOPLE_LOOKUP,
+            LineageSettings.System.putInt(cr, LineageSettings.System.ENABLE_PEOPLE_LOOKUP,
                     ((Boolean) newValue) ? 1 : 0);
         } else if (preference == mEnableReverseLookup) {
-            MKSettings.System.putInt(cr, MKSettings.System.ENABLE_REVERSE_LOOKUP,
+            LineageSettings.System.putInt(cr, LineageSettings.System.ENABLE_REVERSE_LOOKUP,
                     ((Boolean) newValue) ? 1 : 0);
         } else if (preference == mForwardLookupProvider) {
-            MKSettings.System.putString(cr, MKSettings.System.FORWARD_LOOKUP_PROVIDER,
+            LineageSettings.System.putString(cr, LineageSettings.System.FORWARD_LOOKUP_PROVIDER,
                     (String) newValue);
         } else if (preference == mPeopleLookupProvider) {
-            MKSettings.System.putString(cr, MKSettings.System.PEOPLE_LOOKUP_PROVIDER,
+            LineageSettings.System.putString(cr, LineageSettings.System.PEOPLE_LOOKUP_PROVIDER,
                     (String) newValue);
         } else if (preference == mReverseLookupProvider) {
-            MKSettings.System.putString(cr, MKSettings.System.REVERSE_LOOKUP_PROVIDER,
+            LineageSettings.System.putString(cr, LineageSettings.System.REVERSE_LOOKUP_PROVIDER,
                     (String) newValue);
         }
 
@@ -106,21 +106,21 @@ public class LookupSettingsFragment extends PreferenceFragment
 
     private void restoreLookupProviderSwitches() {
         final ContentResolver cr = getActivity().getContentResolver();
-        mEnableForwardLookup.setChecked(MKSettings.System.getInt(cr,
-                MKSettings.System.ENABLE_FORWARD_LOOKUP, 0) != 0);
-        mEnablePeopleLookup.setChecked(MKSettings.System.getInt(cr,
-                MKSettings.System.ENABLE_PEOPLE_LOOKUP, 0) != 0);
-        mEnableReverseLookup.setChecked(MKSettings.System.getInt(cr,
-                MKSettings.System.ENABLE_REVERSE_LOOKUP, 0) != 0);
+        mEnableForwardLookup.setChecked(LineageSettings.System.getInt(cr,
+                LineageSettings.System.ENABLE_FORWARD_LOOKUP, 0) != 0);
+        mEnablePeopleLookup.setChecked(LineageSettings.System.getInt(cr,
+                LineageSettings.System.ENABLE_PEOPLE_LOOKUP, 0) != 0);
+        mEnableReverseLookup.setChecked(LineageSettings.System.getInt(cr,
+                LineageSettings.System.ENABLE_REVERSE_LOOKUP, 0) != 0);
     }
 
     private void restoreLookupProviders() {
         restoreLookupProvider(mForwardLookupProvider,
-                MKSettings.System.FORWARD_LOOKUP_PROVIDER);
+                LineageSettings.System.FORWARD_LOOKUP_PROVIDER);
         restoreLookupProvider(mPeopleLookupProvider,
-                MKSettings.System.PEOPLE_LOOKUP_PROVIDER);
+                LineageSettings.System.PEOPLE_LOOKUP_PROVIDER);
         restoreLookupProvider(mReverseLookupProvider,
-                MKSettings.System.REVERSE_LOOKUP_PROVIDER);
+                LineageSettings.System.REVERSE_LOOKUP_PROVIDER);
     }
 
     private void restoreLookupProvider(ListPreference pref, String key) {
@@ -130,10 +130,10 @@ public class LookupSettingsFragment extends PreferenceFragment
         }
 
         final ContentResolver cr = getActivity().getContentResolver();
-        String provider = MKSettings.System.getString(cr, key);
+        String provider = LineageSettings.System.getString(cr, key);
         if (provider == null) {
             pref.setValueIndex(0);
-            MKSettings.System.putString(cr, key, pref.getValue());
+            LineageSettings.System.putString(cr, key, pref.getValue());
         } else {
             pref.setValue(provider);
         }

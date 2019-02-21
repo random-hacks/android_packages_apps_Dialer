@@ -54,41 +54,41 @@ public final class LookupSettings {
     }
 
     public static boolean isForwardLookupEnabled(Context context) {
-        return MKSettings.System.getInt(context.getContentResolver(),
-                MKSettings.System.ENABLE_FORWARD_LOOKUP, 0) != 0;
+        return LineageSettings.System.getInt(context.getContentResolver(),
+                LineageSettings.System.ENABLE_FORWARD_LOOKUP, 0) != 0;
     }
 
     public static boolean isPeopleLookupEnabled(Context context) {
-        return MKSettings.System.getInt(context.getContentResolver(),
-                MKSettings.System.ENABLE_PEOPLE_LOOKUP, 0) != 0;
+        return LineageSettings.System.getInt(context.getContentResolver(),
+                LineageSettings.System.ENABLE_PEOPLE_LOOKUP, 0) != 0;
     }
 
     public static boolean isReverseLookupEnabled(Context context) {
-        return MKSettings.System.getInt(context.getContentResolver(),
-                MKSettings.System.ENABLE_REVERSE_LOOKUP, 0) != 0;
+        return LineageSettings.System.getInt(context.getContentResolver(),
+                LineageSettings.System.ENABLE_REVERSE_LOOKUP, 0) != 0;
     }
 
     public static String getForwardLookupProvider(Context context) {
         String provider = getLookupProvider(context,
-                MKSettings.System.FORWARD_LOOKUP_PROVIDER, FLP_DEFAULT);
+                LineageSettings.System.FORWARD_LOOKUP_PROVIDER, FLP_DEFAULT);
 
         return provider;
     }
 
     public static String getPeopleLookupProvider(Context context) {
         String provider = getLookupProvider(context,
-                MKSettings.System.PEOPLE_LOOKUP_PROVIDER, PLP_DEFAULT);
+                LineageSettings.System.PEOPLE_LOOKUP_PROVIDER, PLP_DEFAULT);
 
         return provider;
     }
 
     public static String getReverseLookupProvider(Context context) {
         String provider = getLookupProvider(context,
-                MKSettings.System.REVERSE_LOOKUP_PROVIDER, RLP_DEFAULT);
+                LineageSettings.System.REVERSE_LOOKUP_PROVIDER, RLP_DEFAULT);
 
         if ("Google".equals(provider)) {
-            MKSettings.System.putString(context.getContentResolver(),
-                    MKSettings.System.REVERSE_LOOKUP_PROVIDER, RLP_DEFAULT);
+            LineageSettings.System.putString(context.getContentResolver(),
+                    LineageSettings.System.REVERSE_LOOKUP_PROVIDER, RLP_DEFAULT);
             provider = RLP_DEFAULT;
         }
 
@@ -98,10 +98,10 @@ public final class LookupSettings {
     private static String getLookupProvider(Context context,
             String key, String defaultValue) {
         ContentResolver cr = context.getContentResolver();
-        String provider = MKSettings.System.getString(cr, key);
+        String provider = LineageSettings.System.getString(cr, key);
 
         if (provider == null) {
-            MKSettings.System.putString(cr, key, defaultValue);
+            LineageSettings.System.putString(cr, key, defaultValue);
             return defaultValue;
         }
 
