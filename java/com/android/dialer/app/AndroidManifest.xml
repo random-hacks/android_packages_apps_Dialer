@@ -49,9 +49,9 @@
   <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
-  <uses-permission android:name="lineage.permission.WRITE_SETTINGS" />
-  <uses-permission android:name="lineage.permission.READ_PHONE_LOCATION" />
-  <uses-permission android:name="lineage.permission.WRITE_PHONE_LOCATION" />
+  <uses-permission android:name="lineageos.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="lineageos.permission.READ_PHONE_LOCATION" />
+  <uses-permission android:name="lineageos.permission.WRITE_PHONE_LOCATION" />
 
   <!-- This tells the activity manager to not delay any of our activity
    start requests, even if they happen immediately after the user
